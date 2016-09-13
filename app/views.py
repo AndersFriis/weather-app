@@ -3,12 +3,20 @@ from flask import render_template
 from app import app
 
 @app.route("/")
-@app.route("/index")
 def index():
-    user = {
-        "full_name": "Matt Smith",
-        "username": "mattsmith1",
-    }
+    return render_template("index.html")
 
 
-    return render_template("index.html", user=user)
+@app.route("/current", methods=["GET", "POST"])
+def current_weather():
+    weather_form = WeatherForm(request.form)
+    
+    return render_template("current.html", 
+        weather_form=weather_form)
+
+
+@app.route("/forecast", methods=["GET", "POST"])
+def current_weather():
+    return render_template("forecast.html")
+
+

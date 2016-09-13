@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <h1>Hello {{user.full_name}}</h1>
-        <p>
-            Your username is {{user.username}}
-        </p>
-    </div>
+    <div class="jumbotron">
+        <h2>
+            Get the current weather or a 16 day forecast!
+        </h2>
+        <div class="row".
+        <div class="col-md-6">
+            <a href="{{ url_for('current_weather') }}">
+            Current Weather</a>
+        </div>
+        <div class="col-md-6">
+        <a href="{{ url_for('forecast_weather') }}">
+            Weather Forecast</a>
+
+        </div>    
 {% endblock %}
