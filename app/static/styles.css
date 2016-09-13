@@ -6,18 +6,16 @@ body {
 .page-footer {
     position: fixed;
     bottom: 0;
-    width: 100%
-    background-color:#fff;
+    width: 100%;
+    background-color: #fff;
 }
 
-.jumbotron-index{
+.jumbotron-index {
     text-align: center;
-
 }
 
-.jumbotron-index .row{
+.jumbotron-index .row {
     margin-top: 70px;
-
 }
 
 .jumbotron-index a {

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <div class="jumbotron">
         <h2>
             Get the current weather or a 16 day forecast!
@@ -15,4 +16,19 @@
             Weather Forecast</a>
 
         </div>    
+
+    <div class="jumbotron jumbotron-index">
+        <h2>
+            Get the current weather or a 16 day forecast!
+        </h2>
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{ url_for('current_weather') }}">Current Weather</a>
+            </div>
+            <div class="col-md-6">
+                <a href="{{ url_for('forecast_weather') }}">16 Day Forecast</a>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
