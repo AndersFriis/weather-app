@@ -3,6 +3,7 @@ from flask import render_template, request
 from app import app
 from app.forms import WeatherForm
 from app.open_weather_api import OpenWeatherAPI
+import os
 
 @app.route("/")
 def index():
@@ -10,6 +11,7 @@ def index():
 
 @app.route("/current", methods=["GET", "POST"])
 def current_weather():
+
     weather_form = WeatherForm(request.form)
     weather_item = None
 
@@ -17,7 +19,7 @@ def current_weather():
         city = weather_form.city.data
         country_code = weather_form.country_code.data
 
-        api = OpenWeatherAPI(app.config["OPEN_WEATHER_API_KEY"], weather_form.units.data)
+        api = OpenWeatherAPI(os.environ["OPEN_WEATHER_API_KEY"], weather_form.units.data)
         weather_item = api.get_current_weather(city, country_code)
 
     return render_template("current.html",
